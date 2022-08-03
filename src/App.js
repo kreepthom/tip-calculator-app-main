@@ -1,24 +1,50 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState,useEffect } from 'react'
+import { Calculater } from './components/organims/Calculater'
+import { Result } from './components/organims/Result'
+import { UseContext } from './hooks/UseContext'
+import {calculator} from './helpers/calculator'
 
 function App() {
+
+  const initialState = {
+    vBill: '',
+    vPeople: '',
+    vCustom: '',
+    discount:'',
+    rtTotal: 0.00,
+    rtAmount: 0.00,
+  } 
+  const [data, setData] = useState(initialState)
+
+  const {vBill, vPeople, discount, vCustom} = data
+
+    useEffect(() => {
+      const {rtAmount,rtTotal} = calculator(vBill, vPeople, discount, vCustom)
+      setData({
+        ...data,
+        rtAmount,
+        rtTotal,
+      })
+    },[vPeople])
+
+  const valuesUseContext = {
+    initialState,
+    data,
+    setData,
+  }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+
+    <UseContext.Provider value={valuesUseContext}>
+
+      <div className="App">
+        <img className='img-title' src="/assets/logo.svg" alt="Splitter" />
+        <div className="container-main">
+          <Calculater />
+          <Result />
+        </div>
+      </div>
+    </UseContext.Provider>
   );
 }
 
