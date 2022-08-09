@@ -1,7 +1,7 @@
 import React, { useContext } from 'react'
 import { UseContext } from '../../hooks/UseContext'
 import './result.css'
-import { BoxTotal } from '../molecule/BoxTotal'
+import { BoxTotal } from '../molecules/BoxTotal'
 
 export const Result = () => {
 

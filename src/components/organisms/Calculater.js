@@ -1,7 +1,7 @@
 import React,{useContext} from 'react'
 import {UseContext} from '../../hooks/UseContext'
-import { IconPerson, IconDollar } from '../molecule/Svgs';
-import {Inputs} from '../molecule/Inputs'
+import { IconPerson, IconDollar } from '../molecules/Svgs';
+import {Inputs} from '../molecules/Inputs'
 import { ContainerTip } from '../atoms/ContainerTip';
 import './calculater.css'
 

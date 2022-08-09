@@ -1,6 +1,6 @@
 import React, { useState,useEffect } from 'react'
-import { Calculater } from './components/organims/Calculater'
-import { Result } from './components/organims/Result'
+import { Calculater } from './components/organisms/Calculater'
+import { Result } from './components/organisms/Result'
 import { UseContext } from './hooks/UseContext'
 import {calculator} from './helpers/calculator'
 
@@ -38,7 +38,7 @@ function App() {
     <UseContext.Provider value={valuesUseContext}>
 
       <div className="App">
-        <img className='img-title' src="/images/logo.svg" alt="Splitter" />
+        <img className='img-title' src="images/logo.svg" alt="Splitter" />
         <div className="container-main">
           <Calculater />
           <Result />
