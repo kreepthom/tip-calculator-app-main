@@ -38,7 +38,7 @@ function App() {
     <UseContext.Provider value={valuesUseContext}>
 
       <div className="App">
-        <img className='img-title' src="images/logo.svg" alt="Splitter" />
+        <img className='img-title' src="assets/images/logo.svg" alt="Splitter" />
         <div className="container-main">
           <Calculater />
           <Result />
